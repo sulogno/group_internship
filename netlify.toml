@@ -1,6 +1,0 @@
-[build]
-  command = "bash -lc 'ln -sf $PWD/node_modules /opt/node_modules || true && npm run build'"
-  publish = ".next"
-
-[build.environment]
-  NPM_FLAGS = "--legacy-peer-deps"
