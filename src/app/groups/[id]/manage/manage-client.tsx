@@ -9,6 +9,8 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+// Updated Import Path (Using @ is safer)
+import { DeleteGroupZone } from "../../delete-group-zone";
 import {
   AlertDialog,
   AlertDialogAction,
@@ -429,6 +431,13 @@ export function GroupManageClient({ profile, group, applications }: GroupManageC
             </Card>
           </TabsContent>
         </Tabs>
+
+        {/* 👇 DANGER ZONE ADDED HERE 👇 */}
+        <DeleteGroupZone 
+          groupId={group.id} 
+          groupName={group.name} 
+        />
+        
       </main>
 
       <AlertDialog open={showRemoveDialog} onOpenChange={setShowRemoveDialog}>
@@ -458,3 +467,5 @@ export function GroupManageClient({ profile, group, applications }: GroupManageC
     </div>
   );
 }
+
+
