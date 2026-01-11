@@ -1,5 +1,5 @@
 [build]
-  command = "npm run build"
+  command = "bash -lc 'ln -sf $PWD/node_modules /opt/node_modules || true && npm run build'"
   publish = ".next"
 
 [build.environment]
